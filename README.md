@@ -12,11 +12,10 @@
 UnifiedTSLib is a collection of popular time series analysis models implemented in the Hugging Face Transformers style. This library provides easy-to-use, standardized interfaces for training, fine-tuning, and evaluating various state-of-the-art time series forecasting models, making it convenient to apply and benchmark them on your own datasets.
 
 ### 🌟Key Features
-
-- Official implementation of [TimeMixer++: A General Time Series Pattern Machine for Universal Predictive Analysis](https://arxiv.org/abs/2410.16032v5)
-- Supports data parallel training with models saved in Hugging Face format🤗
-- Features a channel-mixing time series pre-training framework that balances batch size and channel count across datasets to enhance computational stability and reduce bandwidth waste caused by padding
-- Inherits [Time-MoE](https://github.com/Time-MoE/Time-MoE)'s disk-based single-sequence reading capability to avoid memory overflow during large-scale data training (300B+ time points), and accelerates disk reading of all sequences within a specified range in Channel Mixing mode
+- Implementation of [TimeMixer++](https://arxiv.org/pdf/2410.16032v5), [TimeMixer](https://arxiv.org/pdf/2405.14616), [iTransformer](https://arxiv.org/pdf/2310.06625), [TimesNet](https://arxiv.org/pdf/2210.02186), and [Autoformer](https://arxiv.org/pdf/2106.13008) (with more being added continuously).
+- Supports data parallel training with models saved in Hugging Face format🤗.
+- Features a channel-mixing time series pre-training framework that balances batch size and channel count across datasets to enhance computational stability and reduce bandwidth waste caused by padding.
+- Inherits [Time-MoE](https://github.com/Time-MoE/Time-MoE)'s disk-based single-sequence reading capability to avoid memory overflow during large-scale data training (300B+ time points), and accelerates disk reading of all sequences within a specified range in Channel Mixing mode.
 
 ### 🚀 Usage
 
@@ -81,23 +80,29 @@ Parameter explanations:
 - `--model_name`: Name of the model architecture.
 
 
-### 🙋All Contributors
-
-Thanks to the following friends for their contributions to UnifiedTSLib:
-
-<a href="https://github.com/kwuking/UnifiedTSLib/graphs/contributors">
-  <img src="https://contrib.rocks/image?repo=kwuking/UnifiedTSLib" />
-</a>
-
 ## 📝 Citation
 
-If you find Timemixer++ useful for your research, please consider citing the associated [paper](https://arxiv.org/abs/2410.16032):
+If you find this useful for your research, please consider citing the associated [paper](https://arxiv.org/abs/2410.16032):
 
-```
-@article{wang2024timemixer++,
+```bibtex
+@inproceedings{Wang2025TimeMixer++,
   title={Timemixer++: A general time series pattern machine for universal predictive analysis},
   author={Wang, Shiyu and Li, Jiawei and Shi, Xiaoming and Ye, Zhou and Mo, Baichuan and Lin, Wenze and Ju, Shengtong and Chu, Zhixuan and Jin, Ming},
-  journal={arXiv preprint arXiv:2410.16032},
+  booktitle={International Conference on Learning Representations (ICLR)},
+  year={2025}
+}
+
+@inproceedings{shi2024timemoe,
+  title={Time-MoE: Billion-Scale Time Series Foundation Models with Mixture of Experts},
+  author={Xiaoming Shi and Shiyu Wang and Yuqi Nie and Dianqi Li and Zhou Ye and Qingsong Wen and Ming Jin},
+  booktitle={International Conference on Learning Representations (ICLR)},
+  year={2025}
+}
+
+@inproceedings{wang2023timemixer,
+  title={TimeMixer: Decomposable Multiscale Mixing for Time Series Forecasting},
+  author={Wang, Shiyu and Wu, Haixu and Shi, Xiaoming and Hu, Tengge and Luo, Huakun and Ma, Lintao and Zhang, James Y and ZHOU, JUN},
+  booktitle={International Conference on Learning Representations (ICLR)},
   year={2024}
 }
 ```

@@ -2,7 +2,6 @@
 <img src="./pic/logo.svg" height = "200" alt="" align=center />
 
 # UnifiedTSLib: A Unified Time Series Foundation Model Training Architecture
-![](https://img.shields.io/github/stars/kwuking/UnifiedTSLib?color=yellow)
 [![Python 3.8+](https://img.shields.io/badge/Python-3.8%2B-blue.svg)](https://www.python.org/downloads/release/python-380/)
 [![PyTorch](https://img.shields.io/badge/PyTorch-2.0%2B-orange.svg)](https://pytorch.org/)[![preprint](https://img.shields.io/static/v1?label=arXiv&message=2410.16032v5&color=B31B1B&logo=arXiv)](https://arxiv.org/abs/2410.16032v5)
 [![huggingface](https://img.shields.io/badge/%F0%9F%A4%97%20Hugging%20Face-Models-FFD21E)](https://huggingface.co/aeiiou/TimeMixerPP_50M)

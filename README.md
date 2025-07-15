@@ -5,6 +5,7 @@
 [![Python 3.8+](https://img.shields.io/badge/Python-3.8%2B-blue.svg)](https://www.python.org/downloads/release/python-380/)
 [![PyTorch](https://img.shields.io/badge/PyTorch-2.0%2B-orange.svg)](https://pytorch.org/)[![preprint](https://img.shields.io/static/v1?label=arXiv&message=2410.16032v5&color=B31B1B&logo=arXiv)](https://arxiv.org/abs/2410.16032v5)
 [![huggingface](https://img.shields.io/badge/%F0%9F%A4%97%20Hugging%20Face-Models-FFD21E)](https://huggingface.co/aeiiou/TimeMixerPP_50M)
+[![huggingface](https://img.shields.io/badge/%F0%9F%A4%97%20Hugging%20Face-Datasets-FFD21E)](https://huggingface.co/datasets/aeiiou/Time_Series)
 [![License: MIT](https://img.shields.io/badge/License-Apache--2.0-green.svg)](https://opensource.org/licenses/Apache-2.0)
 [![Tutorial](https://img.shields.io/badge/Tutorial-Finetune_%26_Eval-important)](https://github.com/kwuking/UnifiedTSLib/blob/main/tutorial/finetune_and_eval.ipynb)
 </div>
@@ -61,6 +62,8 @@ Parameter explanations:
 4. `--model_name Timemixerpp`: Specifies the model architecture to use.
 5. `--from_scratch`: (Optional) If set, the model will be trained from scratch without loading pretrained weights.
 6. `-m`: (Optional) Path to the pretrained model directory. Omit this argument when pre-training from scratch.
+
+Note: For channel dependent model like autoformer, timesnet etc, you should modified the 'enc_in' and 'c_out' to align with the number of channels.
 #### 4. Evaluate a Model
 You can evaluate a trained model using `eval_model.py` as follows:
 ```

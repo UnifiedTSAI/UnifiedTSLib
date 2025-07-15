@@ -3,7 +3,7 @@
 import random
 import numpy as np
 
-from Modeling.datasets.ts_dataset import TimeSeriesDataset
+from modeling.datasets.ts_dataset import TimeSeriesDataset
 
 
 class UnifiedWindowDataset:

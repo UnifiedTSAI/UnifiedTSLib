@@ -1,9 +1,10 @@
 import argparse
-from Modeling.runner import Runner
+from modeling.runner import Runner
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser()
-    parser.add_argument('--model_name', type=str, default='timemixerpp')
+    parser.add_argument('--model_name', type=str, default='timemixerpp',help='iTransformer,timemixerpp,timesnet,autoformer')
+
     parser.add_argument('--model_path', '-m', type=str, default='aeiiou/TimeMixerPP_50M', help='Path to pretrained model.')
     parser.add_argument('--output_path', '-o', type=str, default='logs/timemixerpp')
 

@@ -30,12 +30,20 @@ class GeneralDataset(TimeSeriesDataset):
             seq = seq['sequence']
         return seq
 
-    def get_range(self,start,end):
+    def get_range(self,start,end,max_channel=None):
         assert start < end, "start must be less than end"
-        return [(seq['sequence'] if isinstance(seq, dict) else seq)[start:end]
+        if max_channel is None or len(self.data) <= max_channel:
+            data =  [(seq['sequence'] if isinstance(seq, dict) else seq)[start:end]
                 for seq in self.data]
+        elif max_channel is not None and len(self.data) > max_channel:
+            # Randomly select max_channel indices from 0 to self.num_sequences-1 without replacement, sorted
+            selected_indices = np.sort(np.random.choice(len(self.data), max_channel, replace=False))
+            data =  [(seq['sequence'] if isinstance(seq, dict) else seq)[start:end]
+                    for seq in self.data[selected_indices]]
+        else:
+            raise ValueError(f"Invalid max_channel value: {max_channel}")
 
-
+        return np.array(data)
 
     def get_num_tokens(self):
         if self.num_tokens is None:

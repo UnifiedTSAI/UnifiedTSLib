@@ -68,7 +68,7 @@ class UnifiedTSForPrediction(PreTrainedModel):
             'iTransformer': iTransformerConfig,
             'timemixerpp': TimeMixerppConfig,
             'timesnet': TimesNetConfig,
-            'autofomer': AutoformerConfig,
+            'autoformer': AutoformerConfig,
         }
         self.config = configs
         model_config = self.config_dict[configs.model_name]()

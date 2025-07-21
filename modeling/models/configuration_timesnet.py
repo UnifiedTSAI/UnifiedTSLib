@@ -20,6 +20,7 @@ class TimesNetConfig(PretrainedConfig):
             freq="h",
             top_k=2,
             num_kernels=6,
+            task_name="long_term_forecast",
 
             # 下采样相关
             down_sampling_layers: int = 3,
@@ -45,6 +46,7 @@ class TimesNetConfig(PretrainedConfig):
         self.embed = embed
         self.top_k = top_k
         self.num_kernels = num_kernels
+        self.task_name = task_name
 
         self.down_sampling_layers = down_sampling_layers
         self.down_sampling_method = down_sampling_method

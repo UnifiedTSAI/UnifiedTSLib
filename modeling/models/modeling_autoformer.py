@@ -591,14 +591,6 @@ class AutoformerModel(AutoformerPreTrainedModel):
                 norm_layer=my_Layernorm(config.d_model),
                 projection=nn.Linear(config.d_model, config.c_out, bias=True)
             )
-        if self.task_name == 'imputation':
-            self.projection = nn.Linear(config.d_model, config.c_out, bias=True)
-        if self.task_name == 'anomaly_detection':
-            self.projection = nn.Linear(config.d_model, config.c_out, bias=True)
-        if self.task_name == 'classification':
-            self.act = nn.GELU() if config.activation == "gelu" else nn.ReLU()
-            self.dropout = nn.Dropout(config.dropout)
-            self.projection = nn.Linear(config.d_model * config.seq_len, config.num_class)
         self.post_init()
     def forward(
         self,
@@ -612,6 +604,7 @@ class AutoformerModel(AutoformerPreTrainedModel):
         x_enc = input_ids
         if self.task_name in ['long_term_forecast', 'short_term_forecast']:
             # decomp init
+            x_dec = x_enc
             mean = torch.mean(x_enc, dim=1).unsqueeze(1).repeat(1, self.pred_len, 1)
             zeros = torch.zeros([x_dec.shape[0], self.pred_len, x_dec.shape[2]], device=x_enc.device)
             seasonal_init, trend_init = self.decomp(x_enc)

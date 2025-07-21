@@ -1,0 +1,17 @@
+{
+  "architectures": [
+    "UnifiedTSForPrediction"
+  ],
+  "channel_mixing": true,
+  "model_name": "timesnet",
+  "model_type": "UnifiedTS",
+  "pred_len": [
+    96,
+    192,
+    336,
+    720
+  ],
+  "seq_len": 96,
+  "torch_dtype": "float32",
+  "transformers_version": "4.51.2"
+}

@@ -72,7 +72,7 @@ class UnifiedTSForPrediction(PreTrainedModel):
         }
         self.config = configs
         model_config = self.config_dict[configs.model_name]()
-        model_config.pred_len = configs.pred_len
+        # model_config.pred_len = configs.pred_len
         model_config.channel_mixing = configs.channel_mixing
         self.model = self.model_dict[configs.model_name](model_config)
 

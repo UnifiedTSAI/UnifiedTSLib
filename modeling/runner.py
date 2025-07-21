@@ -129,7 +129,7 @@ class Runner:
             num_train_epochs=num_train_epochs,
             # use_cpu=True,
             max_steps=train_steps,
-            evaluation_strategy=train_config.get("evaluation_strategy", 'no'),
+            #evaluation_strategy=train_config.get("evaluation_strategy", 'no'),
             eval_steps=_safe_float(train_config.get("eval_steps", None)),
             save_strategy=train_config.get("save_strategy", "no"),
             save_steps=_safe_float(train_config.get("save_steps", None)),
@@ -166,10 +166,10 @@ class Runner:
             save_total_limit=train_config.get('save_total_limit',1), 
             report_to="none", 
 
-            metric_for_best_model="loss",  
-            greater_is_better=False,  
-            load_best_model_at_end=True,  
-            prediction_loss_only=True,
+            # metric_for_best_model="loss",  
+            # greater_is_better=False,  
+            # load_best_model_at_end=True,  
+            # prediction_loss_only=True,
         )
 
         model_path = train_config.pop('model_path', None) or self.model_path

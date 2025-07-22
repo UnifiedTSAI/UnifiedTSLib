@@ -5,5 +5,5 @@ python main.py \
     --model_name autoformer \
     --from_scratch \
     -o logs/autoformer_pretrain \
-    -d /Users/bytedance/code/pretrain_datasets/train/data_etth1_train.jsonl \
+    -d Data/pretrain_datasets/train/data_etth1_train.jsonl \
     --channel_mixing True \

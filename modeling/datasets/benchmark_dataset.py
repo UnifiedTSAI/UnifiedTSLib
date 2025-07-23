@@ -156,7 +156,6 @@ class ChannelEvalDataset(Dataset):
 
     def __getitem__(self, idx):
         data = self.dataset.get_range(idx,idx+self.window_length)
-        data = np.array(data[: self.context_length], dtype=np.float32)
         inputs = data[:,:self.context_length]
         labels = data[:,self.context_length:]
         if self.onfly_norm:

@@ -6,9 +6,9 @@ import pandas as pd
 from torch.utils.data import Dataset
 from sklearn.preprocessing import StandardScaler
 
-from Modeling.datasets.general_dataset import GeneralDataset
-from Modeling.datasets.channel_mixing_dataset import BinaryDataset
-from Modeling.utils.log_util import log_in_local_rank_0
+from modeling.datasets.general_dataset import GeneralDataset
+from modeling.datasets.channel_mixing_dataset import BinaryDataset
+from modeling.utils.log_util import log_in_local_rank_0
 
 
 class BenchmarkEvalDataset(Dataset):

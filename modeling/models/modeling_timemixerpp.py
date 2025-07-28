@@ -707,7 +707,6 @@ class TimeMixerppModel(TimeMixerppPreTrainedModel):
     def forward(self,  input_ids: torch.FloatTensor = None,x_mark_enc: torch.FloatTensor = None):
         x_enc = input_ids
         B, T, N = x_enc.size()
-        # return torch.randn(B,24,N)
         x_enc, x_mark_enc = self.__multi_scale_process_inputs(x_enc, x_mark_enc=x_mark_enc)
 
         x_list = []

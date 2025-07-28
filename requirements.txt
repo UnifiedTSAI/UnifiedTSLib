@@ -3,6 +3,7 @@ numpy
 pandas
 torch
 scikit-learn
+seaborn
 
 transformers==4.40.1
 datasets==2.18.0

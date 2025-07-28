@@ -13,7 +13,7 @@ from tqdm import tqdm
 from transformers import AutoModelForCausalLM
 
 
-from time_mixer_pp.datasets.benchmark_dataset import ChannelEvalDataset
+from modeling.datasets.benchmark_dataset import ChannelEvalDataset
 
 
 def setup_nccl(rank, world_size, master_addr='127.0.0.1', master_port=9899):
@@ -53,7 +53,7 @@ class MAEMetric(SumEvalMetric):
 
 class UnifiedTS:
     def __init__(self, model_path, device, context_length, prediction_length, **kwargs):
-        from time_mixer_pp.models.modeling_UnifiedTS import UnifiedTSForPrediction,UnifiedTSConfig
+        from modeling.models.modeling_UnifiedTS import UnifiedTSForPrediction,UnifiedTSConfig
         self.model = UnifiedTSForPrediction.from_pretrained(
             model_path,  
             # device_map="auto",

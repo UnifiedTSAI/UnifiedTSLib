@@ -7,7 +7,7 @@
 [![huggingface](https://img.shields.io/badge/%F0%9F%A4%97%20Hugging%20Face-Models-FFD21E)](https://huggingface.co/aeiiou/TimeMixerPP_50M)
 [![huggingface](https://img.shields.io/badge/%F0%9F%A4%97%20Hugging%20Face-Datasets-FFD21E)](https://huggingface.co/datasets/aeiiou/Time_Series)
 [![License: MIT](https://img.shields.io/badge/License-Apache--2.0-green.svg)](https://opensource.org/licenses/Apache-2.0)
-[![Tutorial](https://img.shields.io/badge/Tutorial-Finetune_%26_Eval-important)](https://github.com/kwuking/UnifiedTSLib/blob/main/finetune_and_eval.ipynb)
+[![Tutorial](https://img.shields.io/badge/Tutorial-Finetune_%26_Eval-important)](https://github.com/UnifiedTSAI/UnifiedTSLib/blob/main/finetune_and_eval.ipynb)
 </div>
 UnifiedTSLib is a collection of popular time series analysis models implemented in the Hugging Face Transformers style. This library provides easy-to-use, standardized interfaces for training, fine-tuning, and evaluating various state-of-the-art time series forecasting models, making it convenient to apply and benchmark them on your own datasets.
 
